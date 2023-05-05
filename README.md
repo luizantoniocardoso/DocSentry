@@ -8,9 +8,9 @@
 
 - [Keniel](https://github.com/KenielDev)
 - [Luiz Antônio](https://github.com/Luiz-Antonio-Cardoso)
-- [Arthur](https://github.com/)
+- [Arthur](https://github.com/arthurromansini)
 - [Bruna](https://github.com/brupperuch)
-- [Guilherme](https://github.com/)
+- [Guilherme](https://github.com/guilhermebp030504)
 
 ## 📋 Descrição do Projeto
 
@@ -20,7 +20,7 @@ O sistema irá lidar com os aspectos de cadastro, aprovação, identificação, 
 
 Visto que a maioria das empresas hoje fazem a organização e armazenamento de documentos em pastas compartilhadas e suas aprovações via e-mail, não possuindo o histórico de aprovações e revisões de um documento. O DocSentry vai auxiliar no workflow de publicação do documento até ele estar disponível para os colaboradores. Podendo este visualizar todas as informações pertinentes ao mesmo, e em caso de revisão ou término de vigência ele será alertado sobre a necessidade de alteração do mesmo.
 
-## 🛠️ Estrutura do Projeto 
+## 🛠️ Estrutura do Projeto
 
 - Login - Autenticação de usuário
 - Dashboard - Visão geral dos documentos pendentes, em revisão e aprovados
@@ -31,7 +31,7 @@ Visto que a maioria das empresas hoje fazem a organização e armazenamento de d
 
 Empresas que possuem sistema de gestão de qualidade.
 
-## 👨‍💻  Techs
+## 👨‍💻 Techs
 
 - [Next.js](https://nextjs.org/) - Um framework React para criar aplicativos web do lado do servidor.
 - [React](https://react.dev/) - Uma biblioteca JavaScript para construir interfaces de usuário.
@@ -41,7 +41,7 @@ Empresas que possuem sistema de gestão de qualidade.
 
 ## 🧐 Diferenciais importantes do projeto
 
-- Alertas de vencimento e revisão dos documentos, quando informado uma data/período de revisão do do documento o sistema irá alertar ao usuário. 
+- Alertas de vencimento e revisão dos documentos, quando informado uma data/período de revisão do do documento o sistema irá alertar ao usuário.
 - Identificar se a cópia do documento é controlada ou não, onde uma cópia controlada é aquela que tem as suas atualizações rigorosamente gerenciadas. Já uma cópia não controlada deixa de ser revisada e atualizada quando utilizada em meio externo ou em alguma situação específica;
 - Manter um histórico de revisão dos documentos publicados.
 
