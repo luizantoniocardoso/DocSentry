@@ -45,4 +45,12 @@ Empresas que possuem sistema de gestão de qualidade.
 - Identificar se a cópia do documento é controlada ou não, onde uma cópia controlada é aquela que tem as suas atualizações rigorosamente gerenciadas. Já uma cópia não controlada deixa de ser revisada e atualizada quando utilizada em meio externo ou em alguma situação específica;
 - Manter um histórico de revisão dos documentos publicados.
 
+## Telas
+
+- Login - inputs de username e senha
+- Cadastro de usuários/edição - listar users e informar username, senha, email, permissões (dropdown de checkbox).
+- Lista de docs - (MODAL) Cadastro, aprovação e listagem de docs com nome, data de validade, status, data de data de alteração, extensão do arquivo, user responsável e departamento responsável.
+- Dashboard - Quantidade total de docs, por departamento, vencidos, aprovados.
+
+
 ---
