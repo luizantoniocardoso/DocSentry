@@ -1,0 +1,63 @@
+# Ignorar arquivos e diretórios específicos
+
+# Diretório node_modules
+node_modules/
+
+# Arquivos de build
+/build/
+/dist/
+/out/
+/.next/
+
+# Variáveis de ambiente
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs e arquivos de depuração
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+
+# Arquivos gerados por IDEs e editores de texto
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+*.tmproj
+*.tmproj.lock
+Thumbs.db
+.DS_Store
+
+# Dependendo do seu ambiente de desenvolvimento, você também pode adicionar exclusões específicas para outras ferramentas e tecnologias, como:
+
+# Dependências gerenciadas pelo npm
+# /packages/*/node_modules/
+
+# Dependências gerenciadas pelo Yarn
+# /packages/*/node_modules/
+# /yarn.lock
+
+# Dependências gerenciadas pelo Composer (PHP)
+# /vendor/
+
+# Dependências gerenciadas pelo Pipenv (Python)
+# /Pipfile.lock
+
+# Dependências gerenciadas pelo Maven (Java)
+# /target/
+
+# Dependências gerenciadas pelo Gradle (Java)
+# /build/
+
+# Dependências gerenciadas pelo CocoaPods (iOS)
+# /Pods/
+# /Podfile.lock
