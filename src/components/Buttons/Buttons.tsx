@@ -3,21 +3,37 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;
   children?: ReactNode;
+  color?: "primary" | "secondary" | "success" | "error";
+  size?: "sm" | "md" | "lg";
 }
 
-export default function Button({
+const Button: React.FC<ButtonProps> = ({
   children,
   label,
-  name,
-  id,
+  color = "primary",
+  size = "md",
   ...props
-}: ButtonProps) {
+}) => {
+  const colorClasses = {
+    primary: "bg-blue-500 hover:bg-blue-600",
+    secondary: "bg-gray-500 hover:bg-gray-600",
+    success: "bg-green-500 hover:bg-green-600",
+    error: "bg-red-500 hover:bg-red-600",
+  };
+
+  const sizeClasses = {
+    sm: "py-1 px-3 text-sm",
+    md: "py-2 px-4 text-base",
+    lg: "py-3 px-6 text-lg",
+  };
+
+  const buttonClasses = `block w-full rounded-xs duration-200 text-white leading-6 ${colorClasses[color]} ${sizeClasses[size]}`;
+
   return (
-    <button
-      {...props}
-      className="block w-full rounded-xs border-0 py-1.5 px-3 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-    >
+    <button {...props} className={buttonClasses}>
       {children}
     </button>
   );
-}
+};
+
+export default Button;

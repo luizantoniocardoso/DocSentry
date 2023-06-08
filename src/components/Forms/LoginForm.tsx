@@ -7,14 +7,24 @@ import Button from "../Buttons/Buttons";
 export default function LoginForm() {
   return (
     <Box>
-      <form className="max-w-3xl grid gap-2">
-        <Typography leading={false} variant="h5">
-          LoginForm
+      <div className="grid gap-4 place-items-center">
+        <Typography variant="h5" className="text-center">
+          Login
         </Typography>
-        <Input label="Usuário" />
-        <Input label="Senha" />
-        <Button>Login</Button>
-      </form>
+        <form>
+          <div className="mb-4">
+            <Input
+              label="Usuário"
+              type="text"
+              className="w-full text-black p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div className="mb-6">
+            <Input label="Senha" labelColor="black" type="password" />
+          </div>
+          <Button type="submit">Entrar</Button>
+        </form>
+      </div>
     </Box>
   );
 }
