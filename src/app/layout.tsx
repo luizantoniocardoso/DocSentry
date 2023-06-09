@@ -1,3 +1,4 @@
+import Sidebar from "@/components/Layout/Sidebar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -15,8 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-light text-dark`}>
-        {children}
+      <body
+        className={`${inter.className} bg-gradient-to-r flex flex-col md:flex-row md:gap-0 h-screen w-screen overflow-y-hidden from-white to-gray-300 text-dark `}
+      >
+        <Sidebar />
+        <div className="w-full h-full  md:m-6 xl:m-10">{children}</div>
       </body>
     </html>
   );

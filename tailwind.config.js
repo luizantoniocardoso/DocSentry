@@ -12,6 +12,10 @@ module.exports = {
     },
 
     extend: {
+      gridTemplateColumns: {
+        sidebar: "300px auto", //for sidebar layout
+        "sidebar-collapsed": "64px auto", //for collapsed sidebar layout
+      },
       colors: {
         primary: "#51AFE5", // Roxo escuro para cor principal
         secondary: "#327EBD", // Roxo médio para cor secundária

@@ -3,8 +3,9 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;
   children?: ReactNode;
-  color?: "primary" | "secondary" | "success" | "error";
+  color?: "primary" | "secondary" | "success" | "error" | "transparent";
   size?: "sm" | "md" | "lg";
+  loading?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -12,6 +13,7 @@ const Button: React.FC<ButtonProps> = ({
   label,
   color = "primary",
   size = "md",
+  loading = false,
   ...props
 }) => {
   const colorClasses = {
@@ -19,6 +21,7 @@ const Button: React.FC<ButtonProps> = ({
     secondary: "bg-gray-500 hover:bg-gray-600",
     success: "bg-green-500 hover:bg-green-600",
     error: "bg-red-500 hover:bg-red-600",
+    transparent: "bg-transparent",
   };
 
   const sizeClasses = {
@@ -27,10 +30,10 @@ const Button: React.FC<ButtonProps> = ({
     lg: "py-3 px-6 text-lg",
   };
 
-  const buttonClasses = `block w-full rounded-xs duration-200 text-white leading-6 ${colorClasses[color]} ${sizeClasses[size]}`;
+  const buttonClasses = `block w-full disabled:cursor-block rounded-xs duration-200 text-white leading-6 ${colorClasses[color]} ${sizeClasses[size]}`;
 
   return (
-    <button {...props} className={buttonClasses}>
+    <button disabled={loading} {...props} className={buttonClasses}>
       {children}
     </button>
   );

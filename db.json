@@ -1,7 +1,43 @@
 {
-  "posts": [
-    { "id": 1, "title": "Post 1" },
-    { "id": 2, "title": "Post 2" },
-    { "id": 3, "title": "Post 3" }
+  "users": [
+    {
+      "id": 1,
+      "name": "Keniel",
+      "email": "kenielalves3@gmail.com",
+      "avatar": "https://github.com/KenielDev.png",
+      "username": "Keniel",
+      "password": "keniel1020",
+      "accessLevel": "admin"
+    }
+  ],
+  "documents": [
+    {
+      "id": 1,
+      "nome": "Document 1",
+      "status": "Pendente",
+      "responsavel": "John",
+      "dataCriacao": "2023-06-01"
+    },
+    {
+      "id": 2,
+      "nome": "Document 2",
+      "status": "Concluido",
+      "responsavel": "Mary",
+      "dataCriacao": "2023-06-02"
+    },
+    {
+      "id": 3,
+      "nome": "Document 3",
+      "status": "Em análise",
+      "responsavel": "Peter",
+      "dataCriacao": "2023-06-03"
+    },
+    {
+      "id": 4,
+      "nome": "Document 4",
+      "status": "Pendente",
+      "responsavel": "Anna",
+      "dataCriacao": "2023-06-04"
+    }
   ]
 }
