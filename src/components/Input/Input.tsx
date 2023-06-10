@@ -25,7 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             {...props}
             id={label}
-            className="block w-full rounded-xs border-0 py-2.5 px-3 leading-6 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+            className="block  file:px-4 file:py-2 file:mr-4 file:border-none file:bg-primary/30 file:rounded-xs rounded-xs w-full border border-dark/20 py-2.5 px-3 leading-6 placeholder:text-gray-400 sm:text-sm sm:leading-6"
           />
           <div>
             {errorMessage && (

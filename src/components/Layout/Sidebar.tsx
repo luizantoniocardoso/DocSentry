@@ -1,9 +1,7 @@
 "use client";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
-  CalendarIcon,
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
   FolderIcon,
@@ -11,7 +9,6 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
-import Box from "../Box/Box";
 import { parseCookies } from "nookies";
 
 type NavItem = {

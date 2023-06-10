@@ -23,7 +23,12 @@ ChartJS.register(
   Legend
 );
 
-export function LineChart() {
+interface LineChartProps {
+  labels: string[];
+  chartData: number[];
+}
+
+export function LineChart({ chartData, labels }: LineChartProps) {
   const options = {
     responsive: true,
     elements: {
@@ -45,11 +50,11 @@ export function LineChart() {
   };
 
   const data = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    labels: labels,
     datasets: [
       {
-        label: "First dataset",
-        data: [33, 53, 85, 41, 44, 65],
+        label: "Revisões Mensais Concluídas",
+        data: chartData,
         backgroundColor: "rgba(75,192,192,0.2)",
         borderColor: "rgba(75,192,192,1)",
         fill: "start",

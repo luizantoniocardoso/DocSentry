@@ -4,4 +4,5 @@ type DocType = {
   status: string;
   responsavel: string;
   dataCriacao: string;
+  dataRevisao: string;
 };
