@@ -8,6 +8,15 @@
       "username": "Keniel",
       "password": "keniel1020",
       "accessLevel": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Guilherme",
+      "email": "guibrito030504@gmail.com",
+      "avatar": "https://github.com/guilhermebp030504.png",
+      "username": "Guilherme",
+      "password": "gui030504",
+      "accessLevel": "admin"
     }
   ],
   "documents": [
