@@ -12,27 +12,28 @@ import { delay } from "@/utils/delay";
 import { setCookie } from "nookies";
 import Link from "next/link";
 
-export default function LoginForm() {
-  const loginSchema = z.object({
+export default function RegisterForm() {
+  const registerSchema = z.object({
+    email: z.string().nonempty("Campo obrigatório"),
     username: z.string().nonempty("Campo obrigatório"),
     password: z.string().nonempty("Campo obrigatório"),
   });
 
-  type LoginCredentials = z.infer<typeof loginSchema>;
+  type RegisterCredentials = z.infer<typeof registerSchema>;
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginCredentials>({
-    resolver: zodResolver(loginSchema),
+  } = useForm<RegisterCredentials>({
+    resolver: zodResolver(registerSchema),
   });
 
   const { push } = useRouter();
 
   const [loading, setLoading] = useState(false);
 
-  const submitLoginForm = async ({ username, password }: LoginCredentials) => {
+  const submitRegisterForm = async ({ username, password }: RegisterCredentials) => {
     setLoading(true);
     try {
       await delay(1000);
@@ -51,7 +52,7 @@ export default function LoginForm() {
         });
 
         setLoading(false);
-        push("/home/dashboard");
+        push("home/dashboard");
         return user;
       } else {
         alert("Credenciais inválidas");
@@ -68,9 +69,20 @@ export default function LoginForm() {
     <Box>
       <fieldset disabled={loading} className="grid gap-4 place-items-center">
         <Typography variant="h5" className="text-center">
-          Login
+          Register
         </Typography>
-        <form onSubmit={handleSubmit(submitLoginForm)}>
+        <form onSubmit={handleSubmit(submitRegisterForm)}>
+         
+          <div>
+            <Input
+              {...register("email")}
+              placeholder="Email"
+              errorMessage={errors.email?.message}
+              label="Email"
+              type="text"
+              className="w-full p-2 text-black border border-gray-300 rounded"
+            />
+          </div>
           <div>
             <Input
               {...register("username")}
@@ -93,7 +105,7 @@ export default function LoginForm() {
           </div>
           <Button type="submit">Entrar</Button>
           <div className="flex items-center justify-center w-full mt-5">
-            <Link  href="/register">Cadastre-se</Link>
+            <Link  href="/login">Login</Link>
           </div>
         </form>
       </fieldset>

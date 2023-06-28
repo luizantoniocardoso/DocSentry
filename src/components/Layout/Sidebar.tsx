@@ -20,17 +20,17 @@ type NavItem = {
 export const routes: NavItem[] = [
   {
     label: "Dashboard",
-    href: "/dashboard",
+    href: "/home/dashboard",
     icon: <HomeIcon className="w-6 h-6" />,
   },
   {
     label: "Documentos",
-    href: "/docs",
+    href: "/home/docs",
     icon: <FolderIcon className="w-6 h-6" />,
   },
   {
     label: "Usuários",
-    href: "/users",
+    href: "/home/users",
     icon: <UserGroupIcon className="w-6 h-6" />,
   },
 ];
