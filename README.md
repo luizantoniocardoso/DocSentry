@@ -56,11 +56,18 @@ Empresas que possuem sistema de gestão de qualidade.
 
 ### Executar o db.json
 
-- `bash Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
-- `bash json-server --watch db.json`
+```bash
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+```bash
+   json-server --watch db.json
+```
 
 ### Executando o projeto em outra porta
 
-- `bash npm run dev -- -p 3001`
+```bash
+    npm run dev -- -p 3001
+```
 
 ---
