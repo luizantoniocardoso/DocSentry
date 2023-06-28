@@ -8,7 +8,7 @@ const Login = () => {
         <div className="w-1/2">
           <div className="text-center mb-4 mt-10 mr-6">
             <img
-              src="https://github.com/guilhermebp030504/Projeto_front/raw/main/DocSentry-Projeto_front/logo.jpeg"
+              src="https://github.com/guilhermebp030504/Projeto_front/raw/main/DocSentry-Projeto_front/logo.png"
               alt="Logo"
               className="mx-auto h-60 max-w-full"
             />

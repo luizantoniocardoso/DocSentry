@@ -69,7 +69,7 @@ const Sidebar = ({ navItems = routes }: Props) => {
       >
         {/* logo and collapse button */}
         <div className={logoContainerClass}>
-          {isOpen && <img className="w-20" src="/img/logo.jpeg" />}
+          {isOpen && <img className="w-20" src="/img/logo.png" />}
           <button
             className="grid place-content-center hover:bg-indigo-800 w-10 h-10 rounded-full opacity-0 md:opacity-100"
             onClick={() => setIsOpen(!isOpen)}
