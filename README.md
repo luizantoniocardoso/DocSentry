@@ -52,5 +52,15 @@ Empresas que possuem sistema de gestão de qualidade.
 - Lista de docs - (MODAL) Cadastro, aprovação e listagem de docs com nome, data de validade, status, data de data de alteração, extensão do arquivo, user responsável e departamento responsável.
 - Dashboard - Quantidade total de docs, por departamento, vencidos, aprovados.
 
+## Rodando o projeto
+
+### Executar o db.json
+
+- `bash Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
+- `bash json-server --watch db.json`
+
+### Executando o projeto em outra porta
+
+- `bash npm run dev -- -p 3001`
 
 ---
