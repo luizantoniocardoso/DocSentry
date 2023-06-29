@@ -3,14 +3,14 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div className="flex justify-center w-screen items-center min-h-screen">
-      <div className="bg-white p-8 shadow-lg rounded-md flex">
+    <div className="flex items-center justify-center w-screen min-h-screen">
+      <div className="flex p-8 bg-white rounded-md shadow-lg">
         <div className="w-1/2">
-          <div className="text-center mb-4 mt-10 mr-6">
+          <div className="mt-10 mb-4 mr-6 text-center">
             <img
-              src="../../img/logo.png"
+              src="/img/logo.png"
               alt="Logo"
-              className="mx-auto h-60 max-w-full"
+              className="max-w-full mx-auto h-60"
             />
           </div>
         </div>

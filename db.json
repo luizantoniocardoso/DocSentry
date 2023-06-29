@@ -17,6 +17,24 @@
       "username": "Guilherme",
       "password": "gui030504",
       "accessLevel": "admin"
+    },
+    {
+      "id": 3,
+      "name": "luiz antonio",
+      "email": "la2004.o.sc@gmail.com",
+      "avatar": "https://i.pravatar.cc/300",
+      "username": "luiz.antonio",
+      "password": "123",
+      "accessLevel": "user"
+    },
+    {
+      "name": "luiz antonio",
+      "email": "la2004.o.sc@gmail.com",
+      "avatar": "https://i.pravatar.cc/300",
+      "username": "luiz.antonioreste",
+      "password": "123",
+      "accessLevel": "user",
+      "id": 4
     }
   ],
   "documents": [

@@ -8,7 +8,7 @@ const Register = () => {
         <div className="flex content-center self-center w-1/2 ">
           <div className="flex items-center self-center mt-10 mb-4 mr-6 text-center" >
             <img
-              src="../../img/logo.png"
+              src="/img/logo.png"
               alt="Logo"
               className="max-w-full mx-auto h-60 "
             />

@@ -15,6 +15,7 @@ import Link from "next/link";
 export default function RegisterForm() {
   const registerSchema = z.object({
     email: z.string().nonempty("Campo obrigatório"),
+    name: z.string().nonempty("Campo obrigatório"),
     username: z.string().nonempty("Campo obrigatório"),
     password: z.string().nonempty("Campo obrigatório"),
   });
@@ -33,27 +34,31 @@ export default function RegisterForm() {
 
   const [loading, setLoading] = useState(false);
 
-  const submitRegisterForm = async ({ username, password }: RegisterCredentials) => {
+  const submitRegisterForm = async ({ email, name, username, password  }: RegisterCredentials) => {
     setLoading(true);
     try {
       await delay(1000);
 
-      const response = await fetch("http://localhost:3000/users");
+      const response = await fetch("/api/user/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          },
+        body: JSON.stringify({
+          email,
+          name,
+          username,
+          password,
+        }),
+      });
+
 
       const result = await response.json();
-
-      const user = result.find(
-        (user: UserCredentials) => user.username === username
-      );
-
-      if (user && user.password === password) {
-        setCookie(null, "user", JSON.stringify(user), {
-          maxAge: 60 * 60 * 6, //6 hours
-        });
-
+      console.log(result);
+      if(result){
         setLoading(false);
-        push("home/dashboard");
-        return user;
+        push("/login");
+        
       } else {
         alert("Credenciais inválidas");
       }
@@ -85,6 +90,16 @@ export default function RegisterForm() {
           </div>
           <div>
             <Input
+              {...register("name")}
+              placeholder="Nome"
+              errorMessage={errors.name?.message}
+              label="Nome"
+              type="text"
+              className="w-full p-2 text-black border border-gray-300 rounded"
+            />
+          </div>
+          <div>
+            <Input
               {...register("username")}
               placeholder="Usuário"
               errorMessage={errors.username?.message}
@@ -103,7 +118,7 @@ export default function RegisterForm() {
               type="password"
             />
           </div>
-          <Button type="submit">Entrar</Button>
+          <Button type="submit">Cadastrar</Button>
           <div className="flex items-center justify-center w-full mt-5">
             <Link  href="/login">Login</Link>
           </div>
