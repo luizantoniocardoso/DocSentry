@@ -99,7 +99,7 @@ const Sidebar = ({ navItems = routes }: Props) => {
           </ul>
         </nav>
         <div className={`grid place-content-stretch p-4`}>
-          <div className="flex gap-4 items-center h-11 overflow-hidden">
+          <div className="flex gap-4 items-center h-18 overflow-hidden">
             <img
               src={userData.avatar}
               height={36}
@@ -113,6 +113,7 @@ const Sidebar = ({ navItems = routes }: Props) => {
                 <Link href="/" className="text-indigo-200 text-sm">
                   View Profile
                 </Link>
+                <button className="h-8 w-16 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">Sair</button>
               </div>
             )}
           </div>
