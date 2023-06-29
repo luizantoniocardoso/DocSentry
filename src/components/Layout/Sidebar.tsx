@@ -8,8 +8,8 @@ import {
   HomeIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
-import { usePathname } from "next/navigation";
-import { parseCookies } from "nookies";
+import { usePathname, useRouter } from "next/navigation";
+import { destroyCookie, parseCookies } from "nookies";
 
 type NavItem = {
   label: string;
@@ -40,8 +40,12 @@ type Props = {
 };
 
 const Sidebar = ({ navItems = routes }: Props) => {
+  const { push } = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  if (!parseCookies().user) 
+    push("/login");
 
   const Icon = isOpen ? ChevronDoubleLeftIcon : ChevronDoubleRightIcon;
 
@@ -61,6 +65,13 @@ const Sidebar = ({ navItems = routes }: Props) => {
 
   const { user: user } = parseCookies();
   const userData = JSON.parse(user);
+
+  const logOut = () => {
+    destroyCookie(null, "user");
+    destroyCookie(null, "logged_in");
+    destroyCookie(null, "user_session");
+    push("/login");
+  };
 
   return (
     <div className={sidebarClass}>
@@ -113,7 +124,7 @@ const Sidebar = ({ navItems = routes }: Props) => {
                 <Link href="/" className="text-indigo-200 text-sm">
                   View Profile
                 </Link>
-                <button className="h-8 w-16 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">Sair</button>
+                <button type="button" onClick={logOut} className="h-8 w-16 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">Sair</button>
               </div>
             )}
           </div>
