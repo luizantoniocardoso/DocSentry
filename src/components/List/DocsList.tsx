@@ -129,6 +129,7 @@ export default function DocsList() {
     register: registerCreateDocument,
     handleSubmit: submitCreateDocument,
     formState: createDocStateForm,
+    reset,
   } = useForm<AddDocumentSchema>({
     resolver: zodResolver(addDocumentSchema),
   });
@@ -140,16 +141,17 @@ export default function DocsList() {
       dataCriacao: new Date(),
       dataRevisao: new Date(),
     };
-    console.log(
-      "🚀 ~ file: DocsList.tsx:117 ~ submitCreateDocumentForm ~ formData:",
-      formData
-    );
+
+    reset();
 
     try {
       await addDocument(formData);
+      setOpenAddDocumentModal(false);
     } catch (error) {
       alert(error);
+      setOpenAddDocumentModal(false);
     }
+    getDocs();
   };
 
   useEffect(() => {

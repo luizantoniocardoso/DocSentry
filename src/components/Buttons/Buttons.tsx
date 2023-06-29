@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
     lg: "py-3 px-6 text-lg",
   };
 
-  const buttonClasses = `block w-full disabled:cursor-block rounded-xs duration-200 text-white leading-6 ${colorClasses[color]} ${className} ${sizeClasses[size]}`;
+  const buttonClasses = `block  disabled:cursor-block rounded-xs duration-200 text-white leading-6 ${colorClasses[color]} ${className} ${sizeClasses[size]}`;
 
   return (
     <button disabled={loading} {...props} className={buttonClasses}>

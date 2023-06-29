@@ -5,30 +5,27 @@ import Typography from "../Typography/Typography";
 import Button from "../Buttons/Buttons";
 import RegisterModal from "../Modal/RegisterModal";
 import Input from "../Input/Input";
-import { PlusIcon } from "@heroicons/react/24/outline";
+import { PlusIcon } from "@heroicons/react/outline";
 import EditModal from "../Modal/EditModal";
 
 interface DocListProps {
-    // documents: DocType[];
-    users: any[];
-}  
+  // documents: DocType[];
+  users: any[];
+}
 
-
-export default function UsersList( { users }: DocListProps): JSX.Element {
-
+export default function UsersList({ users }: DocListProps): JSX.Element {
   const [register, setRegister] = useState(false);
   return (
-    <ul className="grid gap-4  w-full">
-          <div>
-                <Button onClick={() => setRegister(true)} className="flex gap-2 items-center">
-                <PlusIcon className="w-5" /> Adicionar Usuario
-                </Button>
-          </div>
-          <RegisterModal
-              isOpen={register}
-              onClose={() => setRegister(false)}
-            >
-            </RegisterModal>
+    <ul className="grid gap-4 w-full">
+      <div className="flex justify-end">
+        <Button
+          onClick={() => setRegister(true)}
+          className="flex max-w-xs gap-2 items-center"
+        >
+          <PlusIcon className="w-5" /> Adicionar Usuario
+        </Button>
+      </div>
+      <RegisterModal isOpen={register} onClose={() => setRegister(false)} />
       {users.map((user) => {
         const [isOpen, setIsOpen] = useState(false);
 
