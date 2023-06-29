@@ -16,13 +16,14 @@ export default async function Docs() {
   const documentsResult: DocType[] = await documentResponse.json(); // retorno de todos os documentos
 
   return (
-    <div className="max-h-screen p-6 overflow-y-auto grid gap-4 mx-auto w-full">
-      <Box bgColor="light">
+    <div className="max-h-screen p-6 overflow-y-auto grid gap-4 mx-auto w-full backdrop-saturate-200 border-double">
+      <Box bgColor="light" className="rounded-lg shadow-xl p-4">
         <div className="flex items-center justify-between w-full">
           <div>
             <Input
               placeholder="Insira o nome do documento"
               label="Buscar pelo nome do documento"
+              className="w-72"
             />
           </div>
           <div>
@@ -33,7 +34,7 @@ export default async function Docs() {
         </div>
       </Box>
       <div className="w-full">
-        <Box bgColor="light">
+        <Box bgColor="light" className="rounded-lg shadow-xl p-4 backdrop-saturate-200 border-double	">
           <DocsList documents={documentsResult} />
         </Box>
       </div>
