@@ -1,7 +1,15 @@
+"use client";
 import LoginForm from "@/components/Forms/LoginForm";
+import { useRouter } from "next/navigation";
+import { parseCookies } from "nookies";
 import React from "react";
 
+
 const Login = () => {
+  const logged = parseCookies()?.logged_in;
+  const { push } = useRouter();
+  if (logged)
+    push('/home/dashboard')
   return (
     <div className="flex items-center justify-center w-screen min-h-screen">
       <div className="flex p-8 bg-white rounded-md shadow-lg">

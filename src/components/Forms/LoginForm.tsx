@@ -49,6 +49,7 @@ export default function LoginForm() {
         setCookie(null, "user", JSON.stringify(user), {
           maxAge: 60 * 60 * 6, //6 hours
         });
+        setCookie(null, "logged_in", "true")
 
         setLoading(false);
         push("/dashboard");
