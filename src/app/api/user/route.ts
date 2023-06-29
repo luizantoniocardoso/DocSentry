@@ -10,12 +10,12 @@ export async function POST(req: Request, response:Response) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
-        name: name,
-        email: email,
-        avatar: 'https://i.pravatar.cc/300',
-        username: username,
-        password: password,
-        accessLevel: 'user',
+            name: name,
+            email: email,
+            avatar: 'https://i.pravatar.cc/300',
+            username: username,
+            password: password,
+            accessLevel: 'user',
         }),
     })
 

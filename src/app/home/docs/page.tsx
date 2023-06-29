@@ -3,20 +3,16 @@ import Button from "@/components/Buttons/Buttons";
 import Input from "@/components/Input/Input";
 import ItemList from "@/components/List/ItemList";
 import Typography from "@/components/Typography/Typography";
-import React from "react";
+import React, { useEffect } from "react";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import Modal from "@/components/Modal/Modal";
 import DocsList from "@/components/List/DocsList";
 
 export default async function Docs() {
-  const documentResponse = await fetch("http://localhost:3000/documents", {
-    next: { revalidate: 1 },
-  });
 
-  const documentsResult: DocType[] = await documentResponse.json(); // retorno de todos os documentos
 
   return (
-    <div className="max-h-screen p-6 overflow-y-auto grid gap-4 mx-auto w-full">
+    <div className="grid w-full max-h-screen gap-4 p-6 mx-auto overflow-y-auto">
       <Box bgColor="light">
         <div className="flex items-center justify-between w-full">
           <div>
@@ -26,7 +22,7 @@ export default async function Docs() {
             />
           </div>
           <div>
-            <Button className="flex gap-2 items-center">
+            <Button className="flex items-center gap-2">
               <PlusIcon className="w-5" /> Adicionar documento
             </Button>
           </div>
@@ -34,7 +30,7 @@ export default async function Docs() {
       </Box>
       <div className="w-full">
         <Box bgColor="light">
-          <DocsList documents={documentsResult} />
+          <DocsList />
         </Box>
       </div>
     </div>
