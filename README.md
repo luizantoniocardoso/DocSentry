@@ -3,6 +3,7 @@
 </div>
 
 # 🏷️ DocSentry
+<code>[Slides apresentação]((https://www.canva.com/design/DAFnJ1f5Mpg/dg0FIF9XK47M_J26V1US6w/edit?utm_content=DAFnJ1f5Mpg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton))</code>
 
 ## 👨‍💻 Lista de Integrantes da Equipe
 
