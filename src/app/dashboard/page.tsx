@@ -47,64 +47,75 @@ export default async function Dashboard({
   const usersResult = await usersResponse.json();
 
   return (
-    <div className="flex flex-col xl:grid xl:grid-cols-3 gap-4 max-h-screen overflow-auto">
+    <div className="flex flex-col xl:grid xl:grid-cols-3 gap-4 max-h-screen overflow-auto ">
       <div className="xl:col-span-3">
-        <Box bgColor="light">
-          <div className="flex items-center justify-between">
-            <Typography>
-              Quantidade de documentos com status{" "}
-              {searchParams.filterStatus ?? "Concluido"} nos últimos meses
-            </Typography>
-            <div className="flex items-center gap-2">
-              <Typography>Filtrar por status de documento</Typography>
-              <LineChartFilter />
+        <div className="border rounded-lg shadow-xl">
+          <Box bgColor="light">
+            <div className="flex items-center justify-between">
+              <Typography>
+                Quantidade de documentos com status{" "}
+                {searchParams.filterStatus ?? "Concluido"} nos últimos meses
+              </Typography>
+              <div className="flex items-center gap-2">
+                <Typography>Filtrar por status de documento</Typography>
+                <LineChartFilter />
+              </div>
             </div>
-          </div>
-          <LineChart
-            labels={obterMesesComStatus(
-              documentsResult,
-              searchParams.filterStatus ?? "Concluido"
-            )}
-            chartData={contarStatusPorMes(
-              documentsResult,
-              searchParams.filterStatus ?? "Concluido"
-            )}
+            <LineChart
+              labels={obterMesesComStatus(
+                documentsResult,
+                searchParams.filterStatus ?? "Concluido"
+              )}
+              chartData={contarStatusPorMes(
+                documentsResult,
+                searchParams.filterStatus ?? "Concluido"
+              )}
+            />
+          </Box>
+        </div>
+      </div>
+
+      <div className="border rounded-lg  shadow-xl ">
+        <Box bgColor="light">
+          <Typography>Status dos documentos registrados</Typography>
+          <PieChart
+            colors={statusColors}
+            labels={statusLabels}
+            chartData={statusCounts}
           />
         </Box>
       </div>
 
-      <Box bgColor="light">
-        <Typography>Status dos documentos registrados</Typography>
-        <PieChart
-          colors={statusColors}
-          labels={statusLabels}
-          chartData={statusCounts}
-        />
-      </Box>
-      <Box bgColor="light">
-        <div className="flex flex-col gap-4">
-          <div>
-            <Typography>Total de documentos registrados</Typography>
-            <Typography variant="h1">{documentsResult.length}</Typography>
+      <div className="border rounded-lg shadow-xl">
+        <Box bgColor="light">
+          <div className="flex flex-col gap-4">
+            <div>
+              <Typography>Total de documentos registrados</Typography>
+              <Typography variant="h1">{documentsResult.length}</Typography>
+            </div>
+            <div>
+              <Typography>Total de usuários registrados</Typography>
+              <Typography variant="h1">{usersResult.length}</Typography>
+            </div>
+            <div>
+              <Typography>Nome do melhor professor da UNISATC</Typography>
+              <Typography variant="h1">Yuri</Typography>
+            </div>
           </div>
-          <div>
-            <Typography>Total de usuários registrados</Typography>
-            <Typography variant="h1">{usersResult.length}</Typography>
-          </div>
-          <div>
-            <Typography>Nome do melhor professor da UNISATC</Typography>
-            <Typography variant="h1">Yuri</Typography>
-          </div>
-        </div>
-      </Box>
-      <Box bgColor="light">
-        <Typography>Status dos documentos registrados</Typography>
-        <PieChart
-          colors={statusColors}
-          labels={statusLabels}
-          chartData={statusCounts}
-        />
-      </Box>
+        </Box>
+      </div>
+
+      <div className="border rounded-lg shadow-xl ">
+        <Box bgColor="light">
+          <Typography>Status dos documentos registrados</Typography>
+          <PieChart
+            colors={statusColors}
+            labels={statusLabels}
+            chartData={statusCounts}
+          />
+        </Box>
+      </div>
     </div>
+    
   );
 }
