@@ -51,15 +51,18 @@ export default function LoginForm() {
         });
 
         setLoading(false);
-        push("/home/dashboard");
+        push("/dashboard");
+        setLoading(false);
         return user;
       } else {
+        setLoading(false);
         alert("Credenciais inválidas");
       }
 
       setLoading(false);
       return;
     } catch (error) {
+      setLoading(false);
       alert(error);
     }
   };
@@ -93,7 +96,7 @@ export default function LoginForm() {
           </div>
           <Button type="submit">Entrar</Button>
           <div className="flex items-center justify-center w-full mt-5">
-            <Link  href="/register">Cadastre-se</Link>
+            <Link href="/register">Cadastre-se</Link>
           </div>
         </form>
       </fieldset>

@@ -1,8 +1,8 @@
 type DocType = {
-  id: number;
+  id?: number | undefined;
   nome: string;
-  status: string;
+  status: "Concluido" | "Pendente" | "Em analise";
   responsavel: string;
-  dataCriacao: string;
-  dataRevisao: string;
+  dataCriacao: string | Date;
+  dataRevisao: string | Date;
 };

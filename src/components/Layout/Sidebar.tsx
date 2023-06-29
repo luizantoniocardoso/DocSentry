@@ -1,15 +1,23 @@
 "use client";
 import React, { ReactNode, useState } from "react";
 import Link from "next/link";
+// import {
+//   ChevronDoubleLeftIcon,
+//   ChevronDoubleRightIcon,
+//   FolderIcon,
+//   HomeIcon,
+//   UserGroupIcon,
+// } from "@heroicons/react/24/solid";
+import { usePathname, useRouter } from "next/navigation";
+import { destroyCookie, parseCookies } from "nookies";
 import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
   FolderIcon,
   HomeIcon,
   UserGroupIcon,
-} from "@heroicons/react/24/outline";
-import { usePathname, useRouter } from "next/navigation";
-import { destroyCookie, parseCookies } from "nookies";
+} from "@heroicons/react/outline";
+import Image from "next/image";
 
 type NavItem = {
   label: string;
@@ -20,17 +28,17 @@ type NavItem = {
 export const routes: NavItem[] = [
   {
     label: "Dashboard",
-    href: "/home/dashboard",
+    href: "/dashboard",
     icon: <HomeIcon className="w-6 h-6" />,
   },
   {
     label: "Documentos",
-    href: "/home/docs",
+    href: "/docs",
     icon: <FolderIcon className="w-6 h-6" />,
   },
   {
     label: "Usuários",
-    href: "/home/users",
+    href: "/users",
     icon: <UserGroupIcon className="w-6 h-6" />,
   },
 ];
@@ -44,8 +52,7 @@ const Sidebar = ({ navItems = routes }: Props) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  if (!parseCookies().user) 
-    push("/login");
+  if (!parseCookies().user) push("/login");
 
   const Icon = isOpen ? ChevronDoubleLeftIcon : ChevronDoubleRightIcon;
 
@@ -76,7 +83,7 @@ const Sidebar = ({ navItems = routes }: Props) => {
   return (
     <div className={sidebarClass}>
       <div
-        className={`hidden md:flex flex-col justify-between h-screen md:h-full sticky inset-0`}
+        className={`hidden md:flex flex-col justify-between h-screen  sticky inset-0`}
       >
         {/* logo and collapse button */}
         <div className={logoContainerClass}>
@@ -109,9 +116,9 @@ const Sidebar = ({ navItems = routes }: Props) => {
             })}
           </ul>
         </nav>
-        <div className={`grid place-content-stretch p-4`}>
+        <div className={`grid p-4`}>
           <div className="flex gap-4 items-center h-18 overflow-hidden">
-            <img
+            <Image
               src={userData.avatar}
               height={36}
               width={36}
@@ -124,9 +131,15 @@ const Sidebar = ({ navItems = routes }: Props) => {
                 <Link href="/" className="text-indigo-200 text-sm">
                   View Profile
                 </Link>
-                <button type="button" onClick={logOut} className="h-8 w-16 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">Sair</button>
               </div>
             )}
+            <button
+              type="button"
+              onClick={logOut}
+              className="h-8 w-16 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            >
+              Sair
+            </button>
           </div>
         </div>
       </div>

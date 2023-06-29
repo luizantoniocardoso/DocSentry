@@ -14,12 +14,14 @@ interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
     | "small"
     | "smallBold";
   error?: boolean;
+  textColor?: string;
 }
 
 export default function Typography({
   children,
   variant = "paragraph",
   leading = true,
+  textColor,
   error,
   ...props
 }: TypographyProps) {
@@ -38,7 +40,7 @@ export default function Typography({
   return (
     <div
       {...props}
-      className={`cursor-default ${error && "text-error"} ${
+      className={`cursor-default ${textColor} ${error && "text-error"} ${
         leading && "leading"
       } ${variants[variant]}`}
     >

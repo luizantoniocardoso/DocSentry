@@ -17,7 +17,10 @@ export default function Box({
   };
 
   return (
-    <div {...props} className={`p-8 rounded shadow-lg ${variants[bgColor]}`}>
+    <div
+      {...props}
+      className={`p-8 rounded h-full w-full shadow-lg ${variants[bgColor]}`}
+    >
       {children}
     </div>
   );

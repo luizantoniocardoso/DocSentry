@@ -47,15 +47,15 @@ export default async function Dashboard({
   const usersResult = await usersResponse.json();
 
   return (
-    <div className="flex flex-col xl:grid xl:grid-cols-3 gap-4 max-h-screen overflow-auto">
-      <div className="xl:col-span-3">
+    <div className="flex flex-col xl:grid xl:grid-cols-3 gap-4 p-4 h-screen overflow-auto">
+      <div className="xl:col-span-3 h-full">
         <Box bgColor="light">
           <div className="flex items-center justify-between">
             <Typography>
               Quantidade de documentos com status{" "}
               {searchParams.filterStatus ?? "Concluido"} nos últimos meses
             </Typography>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center h-full mt-auto gap-2">
               <Typography>Filtrar por status de documento</Typography>
               <LineChartFilter />
             </div>
